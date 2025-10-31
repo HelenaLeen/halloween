@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mais Doces & Travessuras — Especial de Halloween | Grupo Editorial Hav</title>
+
+<!-- Fontes & Ícones -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0d0b11;--ink:#f2e9e4;--rose:#ff8fab;--violet:#a879e6;--gold:#f4b400;
+  --glass:rgba(255,255,255,.06);--shadow:0 10px 40px rgba(0,0,0,.35);--radius:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--ink);font-family:'Cormorant Garamond',serif;overflow-x:hidden;scroll-behavior:smooth}
+
+/* NAV */
+header.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);
+  background:linear-gradient(180deg, rgba(13,11,17,.8), rgba(13,11,17,.35));
+  border-bottom:1px solid rgba(255,255,255,.07);}
+.nav-inner{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 18px;}
+.brand{display:flex;gap:12px;align-items:center;font-family:'Cinzel',serif;}
+.brand .logo{width:42px;height:42px;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,var(--rose),var(--violet));
+  box-shadow:inset 0 0 18px rgba(255,255,255,.25),0 0 18px rgba(168,121,230,.35);}
+.brand .title{font-weight:700;letter-spacing:.5px}
+nav a{text-decoration:none;color:var(--ink);margin-left:16px;padding:8px 12px;border-radius:12px;transition:.25s ease;font-family:'Cinzel',serif;font-size:.98rem}
+nav a:hover{background:var(--glass);box-shadow:var(--shadow);color:#fff}
+
+/* HERO */
+.hero{position:relative;min-height:80vh;display:grid;place-items:center;padding:60px 20px;background:linear-gradient(180deg,#120f19,#0d0b11 60%);overflow:hidden;}
+/* Névoa */
+.fog{position:absolute;inset:0;pointer-events:none;opacity:.08;mix-blend-mode:screen;
+  background:
+    radial-gradient(circle at 10% 20%,rgba(255,255,255,.16) 0 1px,transparent 1px 10px),
+    radial-gradient(circle at 80% 70%,rgba(255,255,255,.12) 0 1px,transparent 1px 9px),
+    radial-gradient(circle at 50% 40%,rgba(255,255,255,.10) 0 1px,transparent 1px 8px);
+  animation:fogmove 90s linear infinite alternate;}
+@keyframes fogmove{from{transform:translateX(-10%)}to{transform:translateX(10%)}}
+/* Teia (malha fininha translúcida) */
+.web{position:absolute;inset:-20% -20%;pointer-events:none;opacity:.11;mix-blend-mode:screen;
+  background:
+    repeating-linear-gradient(0deg, rgba(255,255,255,.07) 0 1px, transparent 1px 26px),
+    repeating-linear-gradient(60deg, rgba(255,255,255,.05) 0 1px, transparent 1px 24px),
+    repeating-linear-gradient(120deg, rgba(255,255,255,.05) 0 1px, transparent 1px 24px);
+  transform:rotate(0.001deg);
+  animation:webfloat 120s linear infinite alternate;}
+@keyframes webfloat{from{transform:translateY(-1%) rotate(0.001deg)}to{transform:translateY(1%) rotate(0.001deg)}}
+
+.hero-card{position:relative;max-width:980px;width:100%;z-index:5;
+  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));
+  border:1px solid rgba(255,255,255,.07);border-radius:var(--radius);box-shadow:var(--shadow);padding:32px;text-align:center;}
+.banner-ph{height:240px;border-radius:18px;margin-bottom:24px;background:url('banner.png') center/cover no-repeat;box-shadow:0 0 30px rgba(168,121,230,.35);}
+.hero h1{margin:6px 0;font-size:2.3rem;font-family:'Cinzel',serif;color:var(--rose);text-shadow:0 0 14px rgba(255,143,171,.4)}
+.sub{font-size:1.05rem;color:#e9dfdb;}
+.ticker{margin-top:10px;font-family:'Cinzel',serif;font-size:.98rem;color:var(--gold);}
+.ticker .dot{color:#fff;margin:0 10px}
+.cta{margin-top:18px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn{background:var(--rose);color:#0d0b11;border:none;padding:12px 18px;border-radius:999px;font-family:'Cinzel',serif;cursor:pointer;transition:.25s;font-size:.95rem;text-decoration:none}
+.btn:hover{background:var(--violet);color:#fff;box-shadow:0 0 14px rgba(168,121,230,.45)}
+
+/* PREFÁCIO */
+.prefacio{max-width:900px;margin:80px auto;padding:40px 28px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);box-shadow:0 0 25px rgba(244,180,0,.15);font-size:1.1rem;line-height:1.8;color:#e9dfdb;text-align:justify;}
+.prefacio h2{text-align:center;color:var(--gold);font-family:'Cinzel';margin-bottom:14px;text-shadow:0 0 12px rgba(244,180,0,.4);}
+
+/* AUTORES */
+section#autores{padding:68px 18px;}
+.wrap{max-width:1200px;margin:auto}
+.section-title{font-family:'Cinzel';font-size:1.8rem;margin-bottom:24px;text-align:center;color:#fff;text-shadow:0 0 10px rgba(168,121,230,.35)}
+.grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.card{background:var(--glass);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;transition:.4s ease;cursor:pointer;}
+.card:hover{transform:scale(1.03);box-shadow:0 0 20px rgba(168,121,230,.4);}
+.card img{width:100%;height:240px;object-fit:cover;filter:brightness(.85);}
+.card .body{padding:18px;text-align:center;}
+.card h3{margin:10px 0 6px;font-family:'Cinzel';color:var(--rose)}
+.muted{color:#c9c0ba;font-size:.96rem;line-height:1.5;}
+.social a{color:var(--rose);margin:0 6px;text-decoration:none;font-size:1.3rem;transition:.3s;}
+.social a:hover{color:var(--violet);}
+.actions{margin-top:14px;}
+.actions .btn{padding:10px 14px;font-size:.9rem;}
+
+/* MODAL */
+.modal{display:none;position:fixed;z-index:100;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.85);backdrop-filter:blur(8px);overflow:auto;padding:60px 20px;}
+.modal-content{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);max-width:780px;margin:auto;padding:30px 24px;position:relative;box-shadow:var(--shadow);}
+.close{position:absolute;top:14px;right:18px;color:#fff;font-size:1.6rem;cursor:pointer;}
+.modal-content h3{font-family:'Cinzel';color:var(--rose);margin-bottom:8px;}
+.modal-content img{width:100%;max-height:300px;object-fit:cover;border-radius:var(--radius);margin-bottom:14px;}
+.modal-content p{color:#e9dfdb;margin-bottom:14px;line-height:1.7;}
+.modal-content .btn{display:inline-block;margin-top:10px;}
+
+/* FOOTER */
+footer.site{padding:40px 18px;border-top:1px solid rgba(255,255,255,.07);text-align:center;color:#baaFAa;font-size:.9rem;margin-top:60px;}
+
+/* BOTÃO/ÁREA DO TRADUTOR (Google widget) */
+#google_translate_element{position:fixed;bottom:18px;right:18px;z-index:999;
+  background:linear-gradient(135deg,var(--rose),var(--violet));border-radius:999px;padding:8px 14px;box-shadow:0 0 10px rgba(168,121,230,.45);}
+.goog-te-gadget-simple{background:transparent!important;border:none!important;}
+.goog-te-gadget-simple .goog-te-menu-value span{color:#0d0b11!important;font-weight:700;font-family:'Cinzel'!important;}
+/* esconder a barra do topo do Google quando traduz (opcional) */
+body{top:0!important}
+
+/* RESPONSIVO */
+@media(max-width:700px){
+  .hero h1{font-size:1.8rem}
+  .banner-ph{height:180px}
+  .prefacio{margin:40px 12px;padding:28px 18px;}
+  .card img{height:200px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand"><div class="logo" aria-hidden="true"></div><div class="title">Mais Doces & Travessuras</div></div>
+    <nav><a href="#autores">Autoras</a></nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="fog"></div>
+  <div class="web"></div>
+  <div class="hero-card">
+    <div class="banner-ph"></div>
+    <h1>Especial de Halloween</h1>
+    <div class="sub">Grupo Editorial Hav </div>
+    <div class="ticker">Mais Doces & Travessuras<span class="dot">•</span> Contos reunidos<span class="dot">•</span> Halloween</div>
+    <div class="cta"><a class="btn" href="#autores">Explorar Autoras</a></div>
+  </div>
+</section>
+
+<div class="prefacio">
+  <h2>Prefácio</h2>
+  <p>“Yo no creo en brujas, pero que las hay, las hay.” — já dizia o dito popular castelhano.</p>
+  <p>Quem nunca ouviu uma história envolvendo bruxas, lobisomens ou criaturas sobrenaturais? Desde os primórdios da humanidade, o mistério fascina e o medo desperta a imaginação.</p>
+  <p><strong>Mais Doces & Travessuras — Especial de Halloween</strong> reúne autoras que, cada uma a seu modo, exploram os limites entre o real e o fantástico.</p>
+</div>
+
+<section id="autores">
+  <div class="wrap">
+    <h2 class="section-title">Autoras & Contos</h2>
+    <div class="grid">
+      <!-- Helena -->
+      <div class="card" onclick="openModal('helenaModal')">
+        <img src="helena.png" alt="Helena Leen">
+        <div class="body">
+          <h3>Helena Leen</h3>
+          <div class="muted">Autora e curadora desta edição. Apaixonada por letras, cores e formas.</div>
+          <div class="social"><a href="https://www.instagram.com/helena_leen/" target="_blank" title="Instagram de Helena"><i class="fa-brands fa-instagram"></i></a></div>
+          <div class="actions"><button class="btn">Ver contos</button></div>
+        </div>
+      </div>
+      <!-- Silvia -->
+      <div class="card" onclick="openModal('silviaModal')">
+        <img src="silvia.png" alt="Silvia Hermida">
+        <div class="body">
+          <h3>Sílvia Hermida</h3>
+          <div class="muted">Também assina como Hermida SAS,produtora rural,  agente cultural na sua cidade e faz parte da HAV como editora de romance .</div>
+          <div class="social"><a href="https://www.instagram.com/hermidasbooks/" target="_blank" title="Instagram de Sílvia"><i class="fa-brands fa-instagram"></i></a></div>
+          <div class="actions"><button class="btn">Ver conto</button></div>
+        </div>
+      </div>
+      <!-- Robertta -->
+      <div class="card" onclick="openModal('robertaModal')">
+        <img src="roberta.png" alt="Robertta Avelino">
+        <div class="body">
+          <h3>Robertta Avelino</h3>
+          <div class="muted">Publicitária e escritora mineira. Voz sensível e corajosa.</div>
+          <div class="social"><a href="https://www.instagram.com/meninapoesia19/" target="_blank" title="Instagram de Robertta"><i class="fa-brands fa-instagram"></i></a></div>
+          <div class="actions"><button class="btn">Ver conto</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  🕯️ 2025 — Grupo Editorial Hav · Curadoria & organização: Helena Leen
+</footer>
+
+<!-- MODAIS -->
+<div id="helenaModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('helenaModal')">&times;</span>
+    <img src="helena.png" alt="Helena Leen">
+    <h3>Helena Leen</h3>
+    <p>Autora de <strong>“Bruxas de Pano”</strong> e <strong>“Aconteceu no Halloween”</strong>.</p>
+    <a class="btn" href="./helena/bruxasdepano.html">Ler “Bruxas de Pano”</a>
+    <a class="btn" href="./helena2/aconteceunohalloween.html">Ler “Aconteceu no Halloween”</a>
+  </div>
+</div>
+
+<div id="silviaModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('silviaModal')">&times;</span>
+    <img src="silvia.png" alt="Silvia Hermida">
+    <h3>Sílvia Hermida</h3>
+    <p><em>O Susto na Praça Sombria:</em> Quando a diversão do Halloween vira mistério, quatro amigos descobrem que há sombras que não deviam ser despertas.</p>
+    <a class="btn" href="./silvia/susto.html">Ler conto completo</a>
+  </div>
+</div>
+
+<div id="robertaModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('robertaModal')">&times;</span>
+    <img src="Roberta.png" alt="Robertta Avelino">
+    <h3>Robertta Avelino</h3>
+    <p><em>O Mistério da Rua 17:</em> Quatro crianças desafiam o medo e descobrem que certas portas não devem ser abertas nem por curiosidade.</p>
+    <a class="btn" href="./roberta/rua17.html">Ler conto completo</a>
+  </div>
+</div>
+
+<script>
+function openModal(id){document.getElementById(id).style.display='block';}
+function closeModal(id){document.getElementById(id).style.display='none';}
+window.onclick=function(e){document.querySelectorAll('.modal').forEach(m=>{if(e.target==m)m.style.display='none';});}
+</script>
+
+<!-- GOOGLE TRANSLATE (botão visível) -->
+<div id="google_translate_element"></div>
+<script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'pt',
+    includedLanguages: 'en,es',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+}
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
