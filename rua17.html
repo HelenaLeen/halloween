@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O Mistério da Rua 17 — Robertta Avelino</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;font-family:'Cormorant Garamond',serif;background:#0d0b11;color:#f2e9e4;line-height:1.8;overflow-x:hidden}
+  header{text-align:center;padding:60px 20px 20px}
+  header h1{font-family:'Cinzel',serif;color:#ff8fab;font-size:2.4em;margin:0 0 6px;text-shadow:0 0 10px #ff8fab}
+  header h2{color:#a879e6;font-size:1.1em;margin:0;text-shadow:0 0 8px #a879e6}
+
+  figure{margin:36px auto;text-align:center}
+  figure img{width:90%;max-width:900px;border-radius:20px;box-shadow:0 0 25px rgba(168,121,230,.3);opacity:0;transform:translateY(8px);transition:opacity .8s ease, transform .8s ease}
+  figure.show img{opacity:1;transform:none}
+  figcaption{font-size:.9em;color:#bfb3af;margin-top:6px}
+
+  .article{max-width:860px;margin:auto;padding:0 20px 70px;font-size:1.15em;text-align:justify}
+  .article p{margin:18px 0}
+  .article .dropcap:first-letter{float:left;font-size:3.4em;font-family:'Cinzel';color:#f4b400;padding-right:8px;line-height:.9;text-shadow:0 0 10px rgba(244,180,0,.4)}
+
+  blockquote{margin:24px auto;padding:6px 16px;border-left:3px solid #a879e6;color:#e2d8d2;max-width:760px}
+  .hr-mistico{height:2px;max-width:860px;margin:40px auto;border:0;
+    background:linear-gradient(90deg, transparent, rgba(168,121,230,.35), rgba(244,180,0,.45), rgba(168,121,230,.35), transparent);
+    filter:drop-shadow(0 0 10px rgba(168,121,230,.25))}
+  footer{text-align:center;padding:40px 20px;color:#baaFAa;font-size:.9em;border-top:1px solid rgba(255,255,255,.08)}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>O Mistério da Rua 17</h1>
+  <h2>por Robertta Avelino</h2>
+</header>
+
+<!-- IMAGEM 1 — A casa na Rua 17 -->
+<figure class="reveal">
+  <img src="imagem1.png" alt="Casa abandonada no fim da Rua 17 com lamparina acesa na varanda">
+  <figcaption>A casa no fim da Rua 17 — a lamparina que nunca se apaga.</figcaption>
+</figure>
+
+<div class="article">
+
+  <p class="dropcap">No final da Rua 17, havia uma casa que ninguém se atrevia a frequentar. As janelas permaneciam sempre cerradas, o jardim estava tomado por folhagens secas, e uma lamparina pendurada na varanda permanecia sempre acesa — mesmo durante as piores tempestades.</p>
+
+  <p>Contavam que a casa fora da senhora Melina, uma viúva que sumira há mais de duas décadas, numa noite de Dia das Bruxas. Os garotos da vizinhança afirmavam escutar seu piano tocar sozinho à meia-noite, sempre a mesma canção lenta e melancólica.</p>
+
+  <p>Naquele 31 de outubro, Renata e seus amigos resolveram mostrar que tudo não passava de boato. Equipados de lanternas e muita bravura, foram até lá. A porta emitiu um ruído ao ser aberta. O ar no interior tinha odor de bolor e de velas antigas.</p>
+
+  <blockquote>— Vejam... o piano! — falou Renata, mostrando o salão.</blockquote>
+
+  <p>As teclas estavam tomadas por pó... exceto uma, alva e imaculada.</p>
+
+  <!-- IMAGEM 2 — O piano e o espelho -->
+  <figure class="reveal">
+    <img src="imagem2.png" alt="Salão antigo com piano empoeirado e espelho refletindo mulher pálida de preto">
+    <figcaption>O piano soou sozinho — e o espelho revelou um sorriso que não era para eles.</figcaption>
+  </figure>
+
+  <p>Antes que alguém dissesse algo, o piano começou a soar sozinho. As notas ressoaram pelas paredes, e a lamparina da varanda brilhou com mais intensidade, como se tivesse despertado.</p>
+
+  <p>As luzes das lanternas tremeram. No espelho da sala, refletia-se uma mulher pálida de traje preto, com um olhar vazio. Ela sorria — não para eles, mas para o reflexo.</p>
+
+  <p>Renata soltou um grito, e todos fugiram dali. Só que, ao olharem para trás, a lamparina estava apagada pela primeira vez em duas décadas.</p>
+
+  <p>Na manhã seguinte, os moradores encontraram a lamparina acesa novamente. Mas dentro dela, perto da chama, havia algo novo: uma pequena imagem que ninguém conhecia.</p>
+
+  <!-- IMAGEM 3 — A lamparina final -->
+  <figure class="reveal">
+    <img src="imagem3.png" alt="Close da lamparina acesa com pequena fotografia dentro do vidro">
+    <figcaption>Dentro do vidro, uma fotografia que ninguém lembrava existir.</figcaption>
+  </figure>
+
+  <p>Exibia quatro crianças — e uma menina de longos cabelos que parecia sorrir ao fundo, como se sempre tivesse estado ali.</p>
+
+</div>
+
+<footer>
+  🕯️ Mais Doces & Travessuras — Grupo Editorial Hav | 2025 © Robertta Avelino
+</footer>
+
+<script>
+  // efeito de fade-in nas imagens
+  const figs = document.querySelectorAll('figure.reveal');
+  const io = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); }
+    });
+  }, {threshold:.15});
+  figs.forEach(f=>io.observe(f));
+</script>
+
+</body>
+</html>
